@@ -1,3 +1,4 @@
-bachelor_thesis_scraper/spiders/__pycache__/*
-bachelor_thesis_scraper/__pycache__/*
+spiders/__pycache__/
+__pycache__/
 .env
+settings.json
