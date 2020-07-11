@@ -6,6 +6,7 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+from decouple import config
 
 BOT_NAME = 'bachelor_thesis_scraper'
 
@@ -17,7 +18,7 @@ NEWSPIDER_MODULE = 'bachelor_thesis_scraper.spiders'
 #USER_AGENT = 'bachelor_thesis_scraper (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -65,6 +66,8 @@ ROBOTSTXT_OBEY = True
 #ITEM_PIPELINES = {
 #    'bachelor_thesis_scraper.pipelines.BachelorThesisScraperPipeline': 300,
 #}
+ITEM_PIPELINES = {'bachelor_thesis_scraper.pipelines.WebcamImagesPipeline': 1}
+IMAGES_STORE = config('IMAGE_STORAGE_PATH')
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

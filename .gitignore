@@ -1,4 +1,6 @@
 spiders/__pycache__/
 __pycache__/
+images/
 .env
 settings.json
+
