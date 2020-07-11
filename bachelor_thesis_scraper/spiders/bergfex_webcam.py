@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import scrapy
+from bachelor_thesis_scraper.items import WebcamImageItem
 
 class BergfexWebcamSpider(scrapy.Spider):
     # refreshes every 15min
@@ -10,6 +11,8 @@ class BergfexWebcamSpider(scrapy.Spider):
     def parse(self, response):
         webcam = response.xpath("//img[@class='webcamimage-latest']")
         src = webcam.xpath(".//@src").get()
-        yield {
-            'src': src,
+        item_data = {
+            'name': 'bergfex_webcam',
+            'image_urls': [src],
         }
+        yield WebcamImageItem(**item_data)

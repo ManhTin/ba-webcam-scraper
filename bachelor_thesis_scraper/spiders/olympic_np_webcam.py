@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import scrapy
-
+from bachelor_thesis_scraper.items import WebcamImageItem
 
 class OlympicNpWebcamSpider(scrapy.Spider):
     # refreshes every 1min
@@ -11,6 +11,8 @@ class OlympicNpWebcamSpider(scrapy.Spider):
     def parse(self, response):
         webcam = response.xpath("//img[@class='Webcam__Image']")
         src = webcam.xpath(".//@src").get()
-        yield {
-            'src': src,
+        item_data = {
+            'name': 'olympic-np_webcam',
+            'image_urls': [src],
         }
+        yield WebcamImageItem(**item_data)
