@@ -67,7 +67,10 @@ ROBOTSTXT_OBEY = False
 #    'bachelor_thesis_scraper.pipelines.BachelorThesisScraperPipeline': 300,
 #}
 ITEM_PIPELINES = {'bachelor_thesis_scraper.pipelines.WebcamImagesPipeline': 1}
-IMAGES_STORE = config('IMAGE_STORAGE_PATH')
+IMAGES_STORE = config('IMAGES_STORE')
+AWS_ENDPOINT_URL = config('AWS_ENDPOINT_URL')
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

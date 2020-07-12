@@ -3,4 +3,5 @@ __pycache__/
 images/
 .env
 settings.json
+build/
 
