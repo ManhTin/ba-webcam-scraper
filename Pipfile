@@ -6,9 +6,9 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-scrapy = "*"
-python-decouple = "*"
-pillow = "*"
+scrapy = "2.3.0"
+python-decouple = "3.3"
+pillow = "7.2.0"
 
 [requires]
 python_version = "3.8"
